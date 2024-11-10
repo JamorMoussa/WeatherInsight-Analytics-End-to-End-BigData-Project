@@ -1,6 +1,6 @@
-# WeatherInsight-Analytics-End-to-End-BigData-Project
+## WeatherInsight Analytics End-to-End BigData Project
 
-## Project Description
+### Project Description
 
 This project processes [NOAA weather](https://www1.ncdc.noaa.gov/pub/data/noaa/) data to extract maximum, minimum, and average temperatures on a monthly and yearly basis for a specific weather station. Using **Hadoop MapReduce** for data processing, a **NoSQL database** for storage, and **Grafana** or Python for visualization, the project provides an end-to-end pipeline from data acquisition to insightful visual reports.
 
