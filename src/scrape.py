@@ -5,11 +5,6 @@ import json
 import gzip
 
 
-BASE_URL = "https://www1.ncdc.noaa.gov/pub/data/noaa" # 2023/601950-99999-2023.gz"
-BASE_SAVE_DIR = "/home/moussa/Documents/S5/BigData/WeatherInsight-Analytics-End-to-End-BigData-Project/data"
-
-
-
 def save_file(url, save_dir: str, city_name, year):
 
     save_file_path = Path(
@@ -25,7 +20,7 @@ def save_file(url, save_dir: str, city_name, year):
                 file.write(decompressed_content)
 
 
-def save_station(station: dict):
+def save_station(bsave_dir, base_url, station: dict):
 
     station_name = station["station_name"]
     min_year = station["min_year"]
@@ -33,23 +28,29 @@ def save_station(station: dict):
     station_id = station["id"]
 
     save_dir = Path(
-        osp.join(BASE_SAVE_DIR, station_name)
+        osp.join(bsave_dir, station_name)
     )
 
     if not save_dir.exists(): save_dir.mkdir()
 
-    for year in range(min_year, max_year):
-        year = str(year)
-        url = "/".join([BASE_URL, year, "-".join([station_id, year]) + ".gz"]) 
+    try:
+        for year in range(min_year, max_year):
+            year = str(year)
+            url = "/".join([base_url, year, "-".join([station_id, year]) + ".gz"]) 
 
-        save_file(
-            url=url , save_dir=save_dir, city_name=station_name, year=year
-        )
+            save_file(
+                url=url , save_dir=save_dir, city_name=station_name, year=year
+            )
+    except:
+        pass 
 
 
 if __name__ == "__main__":
 
     config = json.load(open("./src/config.json", "r"))
 
+    base_url = config["noaa_url"]
+    bsave_dir = config["data_dir"]
+
     for station in config["stations"]:
-        save_station(station=station)
+        save_station(bsave_dir=bsave_dir, base_url=base_url, station=station)

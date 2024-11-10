@@ -1,4 +1,6 @@
 {   
+    "noaa_url": "https://www1.ncdc.noaa.gov/pub/data/noaa",
+    "data_dir": "/home/moussa/Documents/S5/BigData/WeatherInsight-Analytics-End-to-End-BigData-Project/data",
     "stations": [
         {
             "station_name": "midelt",
