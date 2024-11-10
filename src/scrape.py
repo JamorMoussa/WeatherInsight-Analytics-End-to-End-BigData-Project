@@ -8,7 +8,7 @@ import gzip
 def save_file(url, save_dir: str, city_name, year):
 
     save_file_path = Path(
-        osp.join(save_dir, "-".join([city_name, year])) + ".txt",
+        osp.join(save_dir, f"{year}.txt")
     )
 
     if not save_file_path.exists():
