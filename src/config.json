@@ -1,0 +1,10 @@
+{   
+    "stations": [
+        {
+            "station_name": "midelt",
+            "id": "601950-99999",
+            "min_year": 1949,
+            "max_year": 2024        
+        }
+    ]
+}
