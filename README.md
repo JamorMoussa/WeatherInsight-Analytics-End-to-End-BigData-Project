@@ -9,9 +9,9 @@ This project processes [NOAA weather](https://www1.ncdc.noaa.gov/pub/data/noaa/)
 
 <!-- :white_large_square: :white_check_mark:  -->
 
-- :white_large_square: Scrape NOAA weather data for a specific station.
-- :white_large_square: Load data files into HDFS.
-- :white_large_square: Process data with Hadoop MapReduce (max/min temperatures, monthly/yearly averages).
+- :white_check_mark: Scrape NOAA weather data for a specific station.
+- :white_check_mark: Load data files into HDFS.
+- :white_check_mark: Process data with Hadoop MapReduce (max/min temperatures, monthly/yearly averages).
 - :white_large_square: Store results in a NoSQL database.
-- :white_large_square: Visualize trends using Grafana or Python plots.
+- :white_check_mark: Visualize trends using Grafana or Python plots.
 - :white_large_square: Analyze and interpret findings.
