@@ -36,6 +36,7 @@ year_data = pd.read_csv("./shared_volume/outputs/midelt/year.csv")
 year_data = pd.read_csv("./shared_volume/outputs/midelt/year.csv")
 max_data = pd.read_csv("./shared_volume/outputs/midelt/max.csv")
 min_data = pd.read_csv("./shared_volume/outputs/midelt/min.csv")
+saison_data = pd.read_csv("./shared_volume/outputs/midelt/saison.csv")
 
 # Set Streamlit to dark theme and layout
 st.set_page_config(page_title="Temperature Dashboard", layout="wide")
@@ -57,3 +58,7 @@ st.plotly_chart(max_fig, use_container_width=True)
 
 min_fig = make_figure(min_data, title="Temp Max")
 st.plotly_chart(min_fig, use_container_width=True)
+
+saison_fig = make_figure(saison_data, title="Temp Max")
+st.plotly_chart(saison_fig, use_container_width=True)
+

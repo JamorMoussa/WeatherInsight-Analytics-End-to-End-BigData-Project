@@ -3,7 +3,7 @@ shared_volume/hadoop_lib/
 shared_volume/jars/
 shared_volume/results/
 shared_volume/outputs/
-
+src/hadoop/bigdata/
 test/
 
 # Byte-compiled / optimized / DLL files

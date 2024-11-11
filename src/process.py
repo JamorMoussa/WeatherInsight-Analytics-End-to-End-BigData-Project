@@ -36,15 +36,19 @@ month_data["date"] = month_data["date"].map(lambda x: get_date(x, mode=1))
 year_data["date"] = year_data["date"].map(lambda x: get_date(x))
 
 day_data["year"] = day_data["date"].map(lambda x: x.year)
+day_data["saison"] = day_data["date"].map(lambda x: "-".join([str(x.year), str((x.month - 1)//3)]))
 
 max_data = day_data.groupby("year").max()
 min_data = day_data.groupby("year").min()
+saison_data = day_data.groupby("saison").mean()
 
 day_data.to_csv(OUT_DIR / "day.csv")
 month_data.to_csv(OUT_DIR / "month.csv")
 year_data.to_csv(OUT_DIR / "year.csv")
 max_data.to_csv(OUT_DIR / "max.csv")
 min_data.to_csv(OUT_DIR / "min.csv")
+saison_data.to_csv(OUT_DIR / "saison.csv")
+
 
 
 
